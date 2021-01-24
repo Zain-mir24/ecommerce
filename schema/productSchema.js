@@ -5,7 +5,11 @@ const mongoose = require("mongoose");
     useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true,
+    
   });
+  mongoose.connection.on('connected', function() {
+    console.log('database is connected successfully');
+});
 
 const productschema = new mongoose.Schema({
   Description: {
@@ -21,14 +25,14 @@ const productschema = new mongoose.Schema({
     required: true,
   },
   color: {
-    type:[],
+    type:String,
   },
   Ram: {
-    type: String,
+    type: Number,
     required: true,
   },
   Rom: {
-    type: String,
+    type: Number,
     require: true,
   },
 });
