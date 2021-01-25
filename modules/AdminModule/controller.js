@@ -23,15 +23,21 @@ const addproduct= (req,res)=>{
     })
 }
 const seachproduct = (req, res)=>{
-    const Product = new product
+
        try{
-        Product.findById(req.params.body.id)
-           res.send(Product)
-           console.log(Product)
+        product.findById(req.body.id,{}, function(err, result){
+            if(err){
+                console.log(err);
+            }
+            else{
+                res.send(result)
+            }
+        })
+           
        }
        catch(e){
 
-       }
+       } 
     }
 
 module.exports.addproduct =addproduct
