@@ -22,4 +22,19 @@ const addproduct= (req,res)=>{
         }
     })
 }
+const seachproduct = (req, res)=>{
+    const Product = new product({
+        Description:req.body.Description,
+    })
+    Product.find((error)=>{
+        if(error){
+            console.log(error)
+        }
+        else{
+            console.log("Found the product through the description")
+        }
+    })
+
+}
 module.exports.addproduct =addproduct
+module.exports.seachproduct = seachproduct
