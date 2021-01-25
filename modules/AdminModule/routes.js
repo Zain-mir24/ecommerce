@@ -8,7 +8,7 @@ router.get("/", function (req, res) {
 router.post("/addproduct",async(req,res)=>{
    controller.addproduct(req, res)
 })
-router.post("/seachproduct",(req,res)=>{
+router.post("/searchproduct",(req,res)=>{
     controller.seachproduct(req, res)
 })
 module.exports = router;

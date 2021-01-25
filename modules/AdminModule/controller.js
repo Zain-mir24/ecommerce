@@ -26,12 +26,11 @@ const seachproduct = (req, res)=>{
     const Product = new product({
         Description:req.body.Description,
     })
-    Product.find((error)=>{
+    product.find((error)=>{
         if(error){
             console.log(error)
-        }
-        else{
-            console.log("Found the product through the description")
+        }else{
+            console.log("found the data")
         }
     })
 
