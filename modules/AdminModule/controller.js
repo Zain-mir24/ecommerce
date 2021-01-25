@@ -23,17 +23,16 @@ const addproduct= (req,res)=>{
     })
 }
 const seachproduct = (req, res)=>{
-    const Product = new product({
-        Description:req.body.Description,
-    })
-    product.find((error)=>{
-        if(error){
-            console.log(error)
-        }else{
-            console.log("found the data")
-        }
-    })
+    const Product = new product
+       try{
+        Product.findById(req.params.body.id)
+           res.send(Product)
+           console.log(Product)
+       }
+       catch(e){
 
-}
+       }
+    }
+
 module.exports.addproduct =addproduct
 module.exports.seachproduct = seachproduct
