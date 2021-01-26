@@ -14,4 +14,7 @@ router.post("/searchproduct",(req,res)=>{
 router.post("/updateproduct",(req,res)=>{
     controller.updateproduct(req, res)
 })
+router.post("/deleteproduct",(req,res)=>{
+    controller.deleteproduct(req, res)
+})
 module.exports = router;

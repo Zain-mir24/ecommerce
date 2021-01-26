@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const product =require('../../schema/productSchema')
+const product =require('../../../schema/productSchema')
 
 const addproduct= (req,res)=>{
     const Product =  new product(
@@ -42,7 +42,7 @@ const seachproduct = (req, res)=>{
 const updateproduct=(req,res)=>{
     
     try{
-     product.findByIdAndUpdate('600d9b5c63aee90bf8664ccc',{Description:"zainmir"},function(err,result){
+     product.findByIdAndUpdate(req.body.id,req.body,function(err,result){
         if (err){ 
             console.log(err) 
         } 
@@ -50,13 +50,29 @@ const updateproduct=(req,res)=>{
             console.log("Updated User : ", result); 
         } 
      })
-    }catch(e){
+    }catch(e){}
 
-    }
+}
+const deleteproduct =(req,res)=>{
 
+try{
+    product.findByIdAndDelete(req.body.id,function(err,result){
+        if (err){ 
+            console.log(err) 
+        } 
+        else{ 
+            console.log("Updated User : ", result); 
+        } 
+
+    })
+
+}catch(e){
+
+}
 
 }
 
 module.exports.addproduct =addproduct
 module.exports.seachproduct = seachproduct
 module.exports.updateproduct = updateproduct
+module.exports.deleteproduct = deleteproduct
