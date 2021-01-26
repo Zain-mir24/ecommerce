@@ -4,11 +4,11 @@ const orderschema= new mongoose.Schema({
         type:Number,
         required:true
     },
-    orderstatus:{
+    Orderstatus:{
         type:String,
         required:true
     },
-    orderaddress:{
+    Orderaddress:{
         type:String,
         required:true
     },
