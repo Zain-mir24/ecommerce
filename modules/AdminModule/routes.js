@@ -11,4 +11,7 @@ router.post("/addproduct",async(req,res)=>{
 router.post("/searchproduct",(req,res)=>{
     controller.seachproduct(req, res)
 })
+router.post("/updateproduct",(req,res)=>{
+    controller.updateproduct(req, res)
+})
 module.exports = router;

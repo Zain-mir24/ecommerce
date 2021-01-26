@@ -39,6 +39,24 @@ const seachproduct = (req, res)=>{
 
        } 
     }
+const updateproduct=(req,res)=>{
+    
+    try{
+     product.findByIdAndUpdate('600d9b5c63aee90bf8664ccc',{Description:"zainmir"},function(err,result){
+        if (err){ 
+            console.log(err) 
+        } 
+        else{ 
+            console.log("Updated User : ", result); 
+        } 
+     })
+    }catch(e){
+
+    }
+
+
+}
 
 module.exports.addproduct =addproduct
 module.exports.seachproduct = seachproduct
+module.exports.updateproduct = updateproduct
