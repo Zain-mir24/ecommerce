@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const product =require('../../../schema/productSchema')
+const product =require('../../schema/productSchema')
 
 const addproduct= (req,res)=>{
     const Product =  new product(
