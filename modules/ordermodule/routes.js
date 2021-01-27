@@ -11,7 +11,7 @@ router.post("/addorder",async(req,res)=>{
  router.post("/updateorder",async(req,res)=>{
      controller.updateorder(req, res)
  })
- router.post("/deleteorder",async(req,res)=>{
+ router.get("/deleteorder",async(req,res)=>{
      controller.deleteorder(req, res)
  })
  module.exports= router

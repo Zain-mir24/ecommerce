@@ -3,7 +3,7 @@ const order = require('../../schema/orderSchema')
 
 const addorder = (req, res) => {
     const Order = new order({
-        orderid: req.body.Orderid,
+        order_id: req.body.Order_id,
         name: req.body.Name,
         address: req.body.Address,
         postalcode: req.body.PostalCode
@@ -21,11 +21,12 @@ const addorder = (req, res) => {
 const searchorder = (req, res)=>{
 
     try{
-     order.findById(req.body.id,{}, function(err, result){
+     order.findById(req.body._id,{}, function(err, result){
          if(err){
              console.log(err);
          }
          else{
+             res.send(result)
              res.send(result)
          }
      })
@@ -38,7 +39,7 @@ const searchorder = (req, res)=>{
 const updateorder=(req,res)=>{
  
  try{
-  order.findByIdAndUpdate(req.body.id,req.body,function(err,result){
+  order.findByIdAndUpdate(req.body._id,req.body,function(err,result){
      if (err){ 
          console.log(err) 
      } 
@@ -51,7 +52,7 @@ const updateorder=(req,res)=>{
 }
 const deleteorder=(req,res)=>{
 try{
- order.findByIdAndDelete(req.body.Orderid,function(err,result){
+ order.findByIdAndDelete(req.body._id,function(err,result){
      if (err){ 
          console.log(err) 
      } 
