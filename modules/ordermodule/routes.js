@@ -15,3 +15,4 @@ router.post("/addorder",async(req,res)=>{
      controller.deleteorder(req, res)
  })
  module.exports= router
+ //this is the router file for the ecommerce website
