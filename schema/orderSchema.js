@@ -1,20 +1,11 @@
-import mongoose from 'mongoose';
-const orderschema= new mongoose.Schema({
-    Orderid:{
-        type:Number,
-        required:true
-    },
-    Orderstatus:{
-        type:String,
-        required:true
-    },
-    Orderaddress:{
-        type:String,
-        required:true
-    },
-    
 
+const mongoose = require('mongoose');
 
-})
-
-const Order = mongoose.model('Orders',orderschema)
+const orderschema = new mongoose.Schema({
+    product_ID: { type: String, required: true },
+    Name: { type: String, required: true },
+    address: { type: String, required: true },
+    postal_code: { type: String },
+});
+const Order = mongoose.model('order', orderschema);
+module.exports = Order;
