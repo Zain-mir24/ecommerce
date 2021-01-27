@@ -1,5 +1,5 @@
-import express from 'express';
-const router = express.router
+const express = require('express')
+const router = express.Router()
 const order = require('../../schema/orderSchema')
 const controller= require('./controller')
 router.post("/addorder",async(req,res)=>{
@@ -14,3 +14,4 @@ router.post("/addorder",async(req,res)=>{
  router.post("/deleteorder",async(req,res)=>{
      controller.deleteorder(req, res)
  })
+ module.exports= router

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose =require('mongoose');
 const order = require('../../schema/orderSchema')
 
 const addorder = (req, res) => {
