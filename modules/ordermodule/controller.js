@@ -4,8 +4,9 @@ const order = require('../../schema/orderSchema')
 const addorder = (req, res) => {
     const Order = new order({
         Orderid: req.body.Orderid,
-        Orderstatus: req.body.Orderstatus,
-        Orderaddress: req.body.Orderaddress,
+        name: req.body.Name,
+        address: req.body.Address,
+        postalCode: req.body.PostalCode
     })
 
     Order.save(error => {
