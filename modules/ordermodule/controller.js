@@ -16,7 +16,7 @@ const addorder = (req, res) => {
         }
     })
 }
-
+//searching the order
 const searchorder = (req, res)=>{
 
     try{
