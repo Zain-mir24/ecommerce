@@ -21,7 +21,7 @@ const addorder = (req, res) => {
 const searchorder = (req, res)=>{
 
     try{
-     product.findById(req.body.id,{}, function(err, result){
+     order.findById(req.body.id,{}, function(err, result){
          if(err){
              console.log(err);
          }
@@ -38,21 +38,20 @@ const searchorder = (req, res)=>{
 const updateorder=(req,res)=>{
  
  try{
-  product.findByIdAndUpdate(req.body.id,req.body,function(err,result){
+  order.findByIdAndUpdate(req.body.id,req.body,function(err,result){
      if (err){ 
          console.log(err) 
      } 
      else{ 
-         console.log("Updated User : ", result); 
+         console.log("The record has been deleted"); 
      } 
   })
  }catch(e){}
 
 }
 const deleteorder=(req,res)=>{
-
 try{
- product.findByIdAndDelete(req.body.Orderid,function(err,result){
+ order.findByIdAndDelete(req.body.Orderid,function(err,result){
      if (err){ 
          console.log(err) 
      } 
