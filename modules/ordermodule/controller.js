@@ -3,10 +3,10 @@ const order = require('../../schema/orderSchema')
 
 const addorder = (req, res) => {
     const Order = new order({
-        Orderid: req.body.Orderid,
+        orderid: req.body.Orderid,
         name: req.body.Name,
         address: req.body.Address,
-        postalCode: req.body.PostalCode
+        postalcode: req.body.PostalCode
     })
 
     Order.save(error => {
@@ -52,7 +52,7 @@ const updateorder=(req,res)=>{
 const deleteorder=(req,res)=>{
 
 try{
- product.findByIdAndDelete(req.body.id,function(err,result){
+ product.findByIdAndDelete(req.body.Orderid,function(err,result){
      if (err){ 
          console.log(err) 
      } 
