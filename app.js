@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const routes = require('./router');
+const exphbs=require('express-handlebars')
 const mongoose = require("mongoose");
 app.use(bodyParser.urlencoded({ extended: true }));
 
